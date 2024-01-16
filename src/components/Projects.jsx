@@ -1,10 +1,11 @@
-import { Image, Text } from "@react-three/drei";
+import { Html, Image, Text } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
-
+import { IoMdCloseCircle } from "react-icons/io";
 import { motion } from "framer-motion-3d";
 import { atom, useAtom } from "jotai";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import HtmlProjectDetail from "./HtmlProjectDetail";
 
 export const projects = [
   {
@@ -28,8 +29,16 @@ export const projects = [
   
 ];
 
+
+
 const Project = (props) => {
   const { project, highlighted } = props;
+  const [isOpen, setIsOpen] = useState(false)
+  
+  function toggleIsOpen (){
+    console.log(isOpen)
+    setIsOpen(prev => !prev)
+  }
 
   const background = useRef();
   const bgOpacity = useMotionValue(0.4);
@@ -44,9 +53,11 @@ const Project = (props) => {
 
   return (
     <group {...props}>
+      
       <mesh
         position-z={-0.001}
-        onClick={() => window.open(project.url, "_blank")}
+        onClick={toggleIsOpen}
+        // onClick={() => window.open(project.url, "_blank")}
         ref={background}
       >
         <planeGeometry args={[2.2, 2]} />
@@ -87,7 +98,9 @@ export const Projects = () => {
   const [currentProject] = useAtom(currentProjectAtom);
 
   return (
-    <group position-y={-viewport.height * 2 + 1}>
+    
+    <group position-y={-viewport.height * 2 + 2.5} position-z={7}>
+      <HtmlProjectDetail />
       {projects.map((project, index) => (
         <motion.group
           key={"project_" + index}

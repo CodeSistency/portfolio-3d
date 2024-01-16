@@ -2,13 +2,14 @@ import { ValidationError, useForm } from "@formspree/react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { currentProjectAtom, projects } from "./Projects";
+import HtmlProjectDetail from "./HtmlProjectDetail";
 
 const Section = (props) => {
   const { children, mobileTop } = props;
 
   return (
     <motion.section
-      className={`
+      className={`relative
   h-screen w-screen p-8 max-w-screen-2xl mx-auto
   flex flex-col items-start
   ${mobileTop ? "justify-start md:justify-center" : "justify-center"}
@@ -240,7 +241,8 @@ const ProjectsSection = () => {
 
   return (
     <Section>
-      <div className="flex w-full h-full gap-8 items-center justify-center">
+      {/* <HtmlProjectDetail/> */}
+      <div className="flex w-full h-[80%] gap-8 items-center mt-[280px] justify-center">
         <button
           className="hover:text-indigo-600 transition-colors"
           onClick={previousProject}

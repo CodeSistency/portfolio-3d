@@ -10,6 +10,7 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { Menu } from "./components/Menu";
 import { ScrollManager } from "./components/ScrollManager";
 import { framerMotionConfig } from "./config";
+import HtmlProjectDetail from "./components/HtmlProjectDetail";
 
 function App() {
   const [section, setSection] = useState(0);
@@ -23,12 +24,14 @@ function App() {
   return (
     <>
       <LoadingScreen started={started} setStarted={setStarted} />
+      
       <MotionConfig
         transition={{
           ...framerMotionConfig,
         }}
       >
         <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>
+          
           <color attach="background" args={["#e6e7ff"]} />
           <ScrollControls pages={4} damping={0.1}>
             <ScrollManager section={section} onSectionChange={setSection} />
@@ -40,6 +43,7 @@ function App() {
               </Suspense>
             </Scroll>
             <Scroll html>
+              
               {started && <Interface setSection={setSection} />}
             </Scroll>
           </ScrollControls>
