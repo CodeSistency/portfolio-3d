@@ -21,7 +21,7 @@ const HtmlProjectDetail = ({project, toggle}) => {
           <p className='text-xl mb-3'>contenido</p>
       </div>
   
-</div>
+        </div> 
       </Html>
        
       </>

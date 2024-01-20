@@ -21,6 +21,12 @@ export const projects = [
     description: "A fun Quizz app made with React",
   },
   {
+    title: "Face Detection",
+    url: "https://reconocimiento-facial.vercel.app/",
+    image: "projects/detection.png",
+    description: "Implementing AI to detect emotions"
+  },
+  {
     title: "Tenzies Game",
     url: "https://tenzies-game-5a6c5.web.app/",
     image: "projects/Tenzies.png",
@@ -56,8 +62,7 @@ const Project = (props) => {
       
       <mesh
         position-z={-0.001}
-        onClick={toggleIsOpen}
-        // onClick={() => window.open(project.url, "_blank")}
+        onClick={() => window.open(project.url, "_blank")}
         ref={background}
       >
         <planeGeometry args={[2.2, 2]} />
@@ -100,7 +105,7 @@ export const Projects = () => {
   return (
     
     <group position-y={-viewport.height * 2 + 2.5} position-z={7}>
-      <HtmlProjectDetail />
+      {/* <HtmlProjectDetail /> */}
       {projects.map((project, index) => (
         <motion.group
           key={"project_" + index}
