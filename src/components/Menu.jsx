@@ -1,3 +1,6 @@
+import { FaGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+
 export const Menu = (props) => {
   const { onSectionChange, menuOpened, setMenuOpened } = props;
 
@@ -32,8 +35,18 @@ export const Menu = (props) => {
           <MenuButton label="Skills" onClick={() => onSectionChange(1)} />
           <MenuButton label="Projects" onClick={() => onSectionChange(2)} />
           <MenuButton label="Contact" onClick={() => onSectionChange(3)} />
+        
         </div>
+        <div className="w-full flex items-center justify-around pb-3">
+            <a href="https://www.linkedin.com/in/joseg-valero" target="_blank">
+              <FaLinkedin size={50}/>
+            </a>
+            <a href="https://github.com/CodeSistency" target="_blank">
+              <FaGithub size={50}/>
+            </a>
+          </div>
       </div>
+      
     </>
   );
 };

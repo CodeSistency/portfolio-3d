@@ -104,7 +104,7 @@ export const Projects = () => {
 
   return (
     
-    <group position-y={-viewport.height * 2 + 2.5} position-z={7}>
+    <group position-y={-viewport.height * 2 + 1} position-z={2}>
       {/* <HtmlProjectDetail /> */}
       {projects.map((project, index) => (
         <motion.group
