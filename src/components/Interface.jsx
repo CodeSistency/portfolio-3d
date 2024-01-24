@@ -54,7 +54,7 @@ const AboutSection = (props) => {
         <span className="text-white px-1">Jose Perez</span>
       </h1>
       <motion.p
-        className="text-lg text-gray-600 mt-4"
+        className="text-lg text-gray-900 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -70,7 +70,7 @@ const AboutSection = (props) => {
       >
         I am a Web/Android developer
         <br />
-        I like to build apps for fun
+        Transforming ideas into functional realities
       </motion.p>
       <motion.button
         onClick={() => setSection(3)}
@@ -278,6 +278,7 @@ const ContactSection = () => {
               type="text"
               name="name"
               id="name"
+              required
               className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
             />
             <label
@@ -290,6 +291,7 @@ const ContactSection = () => {
               type="email"
               name="email"
               id="email"
+              required
               className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
             />
             <ValidationError
@@ -307,6 +309,7 @@ const ContactSection = () => {
             <textarea
               name="message"
               id="message"
+              required
               className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
             />
             <ValidationError
@@ -317,7 +320,7 @@ const ContactSection = () => {
               disabled={state.submitting}
               className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 "
             >
-              Submit
+              Send
             </button>
           </form>
         )}

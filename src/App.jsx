@@ -49,6 +49,7 @@ function App() {
           </ScrollControls>
         </Canvas>
         <Menu
+          section={section}
           onSectionChange={setSection}
           menuOpened={menuOpened}
           setMenuOpened={setMenuOpened}
